@@ -9,11 +9,28 @@ class Barang(BaseModel):
 @app.get("/")
 def read_root():
     return{"hello world"} 
-@app.post('/barang/')
-def nama_barang(barang: Barang):
-    return{"data": barang}
+
+
+# @app.post('/barang/')
+# def nama_barang(barang: Barang):
+#     return{"data": barang}
+
+## query params
+# @app.get('/hello/')
+# def hello(nama: str):
+#     return {
+#         "message": nama
+#     }
+#query params
 @app.get('/hello/')
 def hello(nama: str):
     return {
-        "message": nama
+        "NAMAMU": nama
+    }
+
+# path params
+@app.get('/halo/{name}')
+def halo (name: str):
+    return {
+        "NAMAMU": name
     }
